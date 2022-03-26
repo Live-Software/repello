@@ -1,0 +1,44 @@
+services:
+  rabbit-1:
+    image: 10.125.100.32:5143/test-rabbitmq:latest
+    ports:
+      - "5671:5671"
+      - "15672:15672"
+    container_name: rabbit-1
+    hostname: rabbit-1
+    volumes:
+      - "./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+    networks:
+      bunny:
+        aliases:
+          - rabbit-1
+
+  rabbit-2:
+    image: 10.125.100.32:5143/test-rabbitmq:latest
+    ports:
+      - "5672:5671"
+      - "15673:15672"
+    container_name: rabbit-2
+    hostname: rabbit-2
+    volumes:
+      - "./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+    networks:
+      bunny:
+        aliases:
+          - rabbit-2
+
+  rabbit-3:
+    image: 10.125.100.32:5143/test-rabbitmq:latest
+    ports:
+      - "5673:5671"
+      - "15674:15672"
+    container_name: rabbit-3
+    hostname: rabbit-3
+    volumes:
+      - "./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+    networks:
+      bunny:
+        aliases:
+          - rabbit-3
+networks:
+  bunny:

@@ -1,0 +1,52 @@
+{
+  "rabbit_version": "3.9.3",
+  "rabbitmq_version": "3.9.3",
+  "product_name": "RabbitMQ",
+  "product_version": "3.9.3",
+  "users": [
+    {
+      "name": "guest",
+      "password_hash": "pZbwIIA3kbeF6V9fX2pOz6U7lOu2lBdpn0PhuFu1i7rj+jGW",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    },
+    {
+      "name": "test_rabbit_client",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "test_rabbit_client",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [],
+  "policies": [],
+  "queues": [],
+  "exchanges": [],
+  "bindings": []
+}
